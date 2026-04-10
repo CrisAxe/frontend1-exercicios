@@ -32,3 +32,10 @@ themebutton.addEventListener("click", function() {
     themebutton.innerText = "light";
   }
 });
+
+function registar() {
+  const username = document.getElementById("nome").value;
+  const password = document.getElementById("nota").value;
+  localStorage.setItem("nome","nota");
+}
+
