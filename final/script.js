@@ -12,11 +12,6 @@ function createTask() {
 
     if (!title) return;
 
-    async function getDateTime() {
-        const response = await fetch("https://time.now/developer/api/timezone/Europe/Lisbon");
-        const data = await response.json();
-        console.log("Data e hora:", data.datetime);
-    }
 
     const tasks = getTask();
 
@@ -52,7 +47,7 @@ function renderTasks() {
                 ${task.title}
             </span>
 
-            <small style="color: green; font-size: 0.8em;">
+            <small>
                 Created at: ${new Date(task.id).toLocaleString()}
             </small>
             <img src="edit.gif" alt="edit" width="20" height="20" style="cursor: pointer;"onclick="editTask(${task.id}, this.parentElement.querySelector('.task-title'))">
