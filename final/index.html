@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DoIt</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
-    <h1>JusToDoIt</h1>
-    <div class="container">
-        <div class="left"></div>
-        <div class="right"></div>        
-    </div>
-    <div class="left"></div>
-    <form id="form-tarefa">
-        <input type="text" id="tarefa" placeholder="Digite sua tarefa">
-        <button type="submit">Adicionar</button>
-    </form>
     
+    <h1><img src="JTDI5.png" width="250" height="250"></h1>
+    <input id="taskInput" type="text" placeholder="New task">
+    <img src="create.gif" alt="add" width="20" height="20" onclick="createTask()"> 
+    <ul id="taskList"></ul>
+
 </body>
+<style>
+    @import url('style.css');
+</style>
 <script src="script.js"></script>
 </html>
