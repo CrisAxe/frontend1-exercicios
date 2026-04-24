@@ -10,7 +10,7 @@ function createTask() {
     const input = document.getElementById("taskInput");
     const title = input.value.trim();
 
-    if (!title) return;
+    if (!title.trim()) return;
 
 
     const tasks = getTask();
@@ -20,7 +20,7 @@ function createTask() {
     input.value = "";
 
     Swal.fire({
-        position: "top-end",
+        position: "top-center",
         icon: "success",
         title: "Task created successfully!",
         showConfirmButton: false,
@@ -39,19 +39,18 @@ function renderTasks() {
         const li = document.createElement("li");
 
         li.innerHTML = `
-            <img src="validate.gif" alt="validate" width="20" height="20"onclick="toggleDone(${task.id})">
+            <img src="ap.gif" alt="validate" width="20" height="20"onclick="toggleDone(${task.id})">
 
             <span class="task-title"
-                style="text-decoration: ${task.done ? "line-through" : "none"}"
-                onclick="editTask(${task.id}, this)">
+                style="text-decoration: ${task.done ? "line-through" : "none"}">
                 ${task.title}
             </span>
 
             <small>
                 Created at: ${new Date(task.id).toLocaleString()}
             </small>
-            <img src="edit.gif" alt="edit" width="20" height="20" style="cursor: pointer;"onclick="editTask(${task.id}, this.parentElement.querySelector('.task-title'))">
-            <img src="delete.gif" alt="delete" width="20" height="20" style="cursor: pointer;"onclick="deleteTask(${task.id})">
+            <img src="ed.gif" alt="edit" width="20" height="20" style="cursor: pointer;"onclick="editTask(${task.id}, this.parentElement.querySelector('.task-title'))">
+            <img src="del.gif" alt="delete" width="20" height="20" style="cursor: pointer;"onclick="deleteTask(${task.id})">
         `;
         taskList.appendChild(li);
     });
@@ -67,7 +66,7 @@ function toggleDone(id) {
     saveTask(updatedTasks);
 
     Swal.fire({
-        position: "top-end",
+        position: "top-center",
         icon: "success",
         title: "Task updated successfully!",
         showConfirmButton: false,
@@ -105,7 +104,7 @@ function editTask(id, edited) {
         saveTask(updatedTasks);
 
         Swal.fire({
-            position: "top-end",
+            position: "top-center",
             icon: "success",
             title: "Task edited successfully!",
             showConfirmButton: false,
@@ -120,7 +119,7 @@ function deleteTask(id) {
     saveTask(tasks);
 
     Swal.fire({
-        position: "top-end",
+        position: "top-center",
         icon: "success",
         title: "Task deleted successfully!",
         showConfirmButton: false,
