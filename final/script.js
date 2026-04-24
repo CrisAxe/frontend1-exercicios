@@ -130,3 +130,6 @@ function deleteTask(id) {
 
 renderTasks();
 
+const toggle = document.getElementById("theme-toggle");
+const refresh = document.getElementById("refresh");
+const theme = localStorage.getItem("theme")
